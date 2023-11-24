@@ -41,7 +41,7 @@ public class TokenProvider implements InitializingBean {
     @Override
     public void afterPropertiesSet() {
         byte[] keyBytes = Decoders.BASE64.decode(secret);
-        this.key = Keys.hmacShaKeyFor(keyBytes);
+        this.key = Keys.hmacShaKeyFor(keyBytes); //주입받은 secret값을 Base64 Decode해서 key변수에 할당
     }
 
     public String createToken(Authentication authentication) {
