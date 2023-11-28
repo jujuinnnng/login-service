@@ -5,6 +5,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.*;
+
+
 @Data
 @Builder
 @AllArgsConstructor
@@ -13,12 +16,14 @@ public class User {
 
     private Long userId;
 
-    private String userName;
+    private String username;
 
-    private String userPw;
+    private String password;
 
-    private String nickName;
+    private String nickname;
 
     private boolean activated; //활성화여부
 
+    @Builder.Default
+    private List<Authority> authorities = new ArrayList<>();
 }

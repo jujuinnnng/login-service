@@ -3,10 +3,15 @@
 
 <mapper namespace="com.example.mapper.UserMapper">
 
-    <select id="getUser" parameterType="String" resultType="com.example.entity.User">
-        select user_name, user_pw, nick_name
-        from users
-        where user_name = #{user_name}
+    <select id="findByUsername" parameterType="String" resultType="com.example.entity.User">
+        select user_id, username, password, nickname, activated
+        from user_tb
+        where username = #{username}
+    </select>
+    <select id="findAuthorityByUserId" resultType="com.example.entity.Authority">
+        select user_id, authority_name
+        from user_authority
+        where user_id = #{userId}
     </select>
 
 </mapper>

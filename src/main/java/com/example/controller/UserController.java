@@ -1,7 +1,7 @@
 package com.example.controller;
 
 import com.example.entity.User;
-import com.example.service.UserService;
+import com.example.service.CustomUserDetailsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,12 +14,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequiredArgsConstructor
 public class UserController {
 
-    private final UserService userService;
+    private final CustomUserDetailsService customUserDetailsService;
 
     @GetMapping("/user/{username}")
     public User getUser(Model model, @PathVariable String username) {
 
-        return userService.getUser(username);
+        return null;
     }
 
 }
